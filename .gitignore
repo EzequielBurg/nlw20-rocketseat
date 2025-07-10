@@ -25,3 +25,5 @@ web/*.ntvs*
 web/*.njsproj
 web/*.sln
 web/*.sw?
+
+# evolução
