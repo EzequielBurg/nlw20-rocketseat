@@ -7,7 +7,7 @@ await reset(db, schema)
 await seed(db, schema).refine(file => {
   return {
     rooms: {
-      count: 20,
+      count: 5,
       columns: {
         name: file.companyName(),
         description: file.loremIpsum(),

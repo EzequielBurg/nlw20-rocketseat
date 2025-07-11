@@ -11,7 +11,7 @@ export const getRoomsRoute: FastifyPluginAsyncZod = async (app) => {
           id: schema.rooms.id,
           name: schema.rooms.name,
           questionsCount: count(schema.questions.id),
-          cratedAt: schema.rooms.createdAt
+          createdAt: schema.rooms.createdAt
         })
         .from(schema.rooms)
         .leftJoin(schema.questions, eq(schema.questions.roomId, schema.rooms.id))
