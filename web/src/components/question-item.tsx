@@ -7,6 +7,7 @@ interface Question {
   question: string
   answer?: string | null
   createdAt: string
+  isGeneratingAnswer?: boolean
 }
 
 interface QuestionItemProps {
@@ -14,7 +15,7 @@ interface QuestionItemProps {
 }
 
 export function QuestionItem({ question }: QuestionItemProps) {
-  const isGenerating = !question.answer
+  const isGenerating = !question.isGeneratingAnswer
 
   return (
     <Card>
@@ -35,7 +36,8 @@ export function QuestionItem({ question }: QuestionItemProps) {
             </div>
           </div>
 
-          <div className="flex items-start space-x-3">
+          {!!question.answer || question.isGeneratingAnswer &&
+            <div className="flex items-start space-x-3">
             <div className="flex-shrink-0">
               <div className="flex size-8 items-center justify-center rounded-full bg-primary/10">
                 <Bot className="size-4 text-secondary-foreground" />
@@ -58,7 +60,7 @@ export function QuestionItem({ question }: QuestionItemProps) {
                 )}
               </div>
             </div>
-          </div>
+          </div>}
 
           <div className="flex justify-end">
             <span className="text-muted-foreground text-xs">
