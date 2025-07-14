@@ -15,6 +15,13 @@
       "when": 1752096582711,
       "tag": "0001_damp_ulik",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1752448273370,
+      "tag": "0002_careful_thunderball",
+      "breakpoints": true
     }
   ]
 }

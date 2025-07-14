@@ -7,5 +7,5 @@ export const questions = pgTable('questions', {
     question: text().notNull(),
     answer: text(),
     description: text(),
-    createdAt: timestamp().notNull()
+    createdAt: timestamp().notNull().$default(() => new Date())
 })
